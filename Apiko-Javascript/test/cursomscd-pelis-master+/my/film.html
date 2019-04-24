@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<meta charset="UTF-8">
+		<title>Film search</title>
+		<script>
+			var data = "{}";
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			
+			xhr.addEventListener("readystatechange", function () {
+				if (this.readyState === this.DONE) {
+					console.log(this.responseText);
+				}
+			});
+			
+			xhr.open("GET", 'https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&query=superman&language=en-US&api_key=c2406e33bae3c04a8fdebb618c81ede7');
+			
+			xhr.send(data);
+			</script>
+</head>
+<body>
+		<div id="botones">  
+			
+			<div>
+					Пошук: <input id="busqueda" type="text" value="" />
+					<input id="btnFind" type="button" value="FIND" />
+			</div>
+	</div>
+	
+	<div id="principal"></div>
+
+	<script src="./js/js.js" type="text/javascript"></script>
+</body>
+</html>
